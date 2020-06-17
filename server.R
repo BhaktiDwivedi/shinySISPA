@@ -39,7 +39,7 @@ shinyServer(function(input, output, session) {
           if(input$analysisType == '1d'){
                 
                 if (input$f == 'ED'){
-                  dataFile <- "data/KMS11_expvar_geneset_MM_compass_exp.txt"
+                  dataFile <- "data/exp.txt"
                   dat <- read.csv(dataFile, header=T, sep="\t")
                 } else if (input$f == 'LD'){
                   if (is.null(input$file)) 
@@ -78,7 +78,7 @@ shinyServer(function(input, output, session) {
           else {
             
             if (input$f1 == 'ED'){
-              dataFile <- "data/IgH_tx_geneset_MM_compass_exp.txt"
+              dataFile <- "data/exp2.txt"
               dat <- read.csv(dataFile, header=T, sep="\t")
             } else if (input$f1 == 'LD'){
               if (is.null(input$file1)) 
@@ -121,7 +121,7 @@ shinyServer(function(input, output, session) {
         if(input$analysisType == '2d' || input$analysisType == '3d'){  
           
           if (input$f2 == 'ED'){
-            dataFile <- "data/IgH_tx_geneset_MM_compass_cnv.txt"
+            dataFile <- "data/cnv2.txt"
             dat <- read.csv(dataFile, header=T, sep="\t")
           } else if (input$f2 == 'LD'){
             if (is.null(input$file2)) 
@@ -166,7 +166,7 @@ shinyServer(function(input, output, session) {
       if(input$analysisType == '3d'){  
             
         if (input$f3 == 'ED'){
-          dataFile <- "data/KMS11_expvar_geneset_MM_compass_var.txt"
+          dataFile <- "data/var.txt"
           dat <- read.csv(dataFile, header=T, sep="\t")
         } else if (input$f3 == 'LD'){
           if (is.null(input$file3)) 
