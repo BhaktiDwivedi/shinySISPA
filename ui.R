@@ -6,8 +6,12 @@ textareaInput <- function(id, label, value, rows=20, cols=35, class="form-contro
 }
 
 shinyUI(fluidPage(theme = "bootstrap.css",
+<<<<<<< HEAD
                   tags$head(includeScript("google-analytics.js")),
 
+=======
+                  
+>>>>>>> 6b77c12893d36f96de2d60d81d6fc308fc49562f
              headerPanel(
                h1("shinySISPA", 
                   style = "font-family: 'Times New Roman'; font-style:bold;
@@ -32,10 +36,16 @@ shinyUI(fluidPage(theme = "bootstrap.css",
                         tags$hr(),
                         conditionalPanel(condition = "input.analysisType == '1d'",
                                          #textareaInput("datainput","Enter Data:", "", rows = 5, cols = 30),
+<<<<<<< HEAD
                                          selectInput(inputId="f", label="File Input:", choices=c("User data"="LD","Example data"="ED"), selectize = TRUE, width=NULL),
                                          conditionalPanel("input.f=='LD'", fileInput(inputId="file", label="", width=NULL, multiple=TRUE)),
                                          #textInput("dataType", "Input Data Type", value="", width="149px"),
                                          selectInput("profile","Sample Profile", c('up','down'),width="130px", selectize = FALSE)
+=======
+                                         fileInput(inputId="file", label="File Input:"),
+                                         #textInput("dataType", "Input Data Type", value="", width="149px"),
+                                         selectInput("profile","Sample Profile", c('up','down'),width="130px",selectize = FALSE)
+>>>>>>> 6b77c12893d36f96de2d60d81d6fc308fc49562f
                                          ), 
                         conditionalPanel(condition = "input.analysisType == '2d' || input.analysisType == '3d'",
                                          #textareaInput("datainput1","Enter Data:", "", rows = 5, cols = 30),
@@ -43,19 +53,31 @@ shinyUI(fluidPage(theme = "bootstrap.css",
                                          conditionalPanel("input.f1=='LD'", fileInput(inputId="file1", label="", width=NULL, multiple=TRUE)),
                                          ##fileInput(inputId="file1", label="File Input 1:"),
                                          #textInput("dataType1", "Input Data Type 1", value="", width="149px"),
+<<<<<<< HEAD
                                          selectInput("profile_one","Sample Profile 1", c('up','down'),width="130px", selected="down", selectize = FALSE),
+=======
+                                         selectInput("profile_one","Sample Profile 1", c('up','down'),width="130px",selectize = FALSE),
+>>>>>>> 6b77c12893d36f96de2d60d81d6fc308fc49562f
                                          #textareaInput("datainput2","Data 2:", "", rows = 5, cols = 30),
                                          tags$hr(),
                                          selectInput(inputId="f2", label="File Input 2:", choices=c("User data"="LD","Example data"="ED"), selectize = TRUE, width=NULL),
                                          conditionalPanel("input.f2=='LD'", fileInput(inputId="file2", label="", width=NULL, multiple=TRUE)),
                                          ##fileInput(inputId="file2", label="File Input 2:"),
                                          #textInput("dataType2", "Input Data Type 2", value="", width="149px"),
+<<<<<<< HEAD
                                          selectInput("profile_two","Sample Profile 2", c('up','down'), width="130px", selected="down", selectize = FALSE)
                         ),
                         conditionalPanel(condition = "input.analysisType == '3d'",
                                          tags$hr(),
                                          selectInput(inputId="f3", label="File Input 3:", choices=c("User data"="LD","Example data"="ED"), selectize = TRUE, width=NULL),
                                          conditionalPanel("input.f3=='LD'", fileInput(inputId="file3", label="", width=NULL, multiple=TRUE)),
+=======
+                                         selectInput("profile_two","Sample Profile 2", c('up','down'),width="130px",selectize = FALSE)
+                        ),
+                        conditionalPanel(condition = "input.analysisType == '3d'",
+                                         tags$hr(),
+                                         fileInput(inputId="file3", label="File Input 3:"),
+>>>>>>> 6b77c12893d36f96de2d60d81d6fc308fc49562f
                                          #textInput("dataType3", "Input Data Type 3", value="", width="149px"),
                                          selectInput("profile_three","Sample Profile 3", c('up','down'),width="130px",selectize = FALSE)
                                          
@@ -64,7 +86,11 @@ shinyUI(fluidPage(theme = "bootstrap.css",
                       wellPanel(
                         h4("Changepoint Input"),
                         tags$hr(),
+<<<<<<< HEAD
                         selectInput("changes","Changes Using:", c('mean','var','meanvar'),width="150px",selected="var", selectize = FALSE),
+=======
+                        selectInput("changes","Changes Using:", c('mean','var','meanvar'),width="150px",selected="mean", selectize = FALSE),
+>>>>>>> 6b77c12893d36f96de2d60d81d6fc308fc49562f
                         selectInput("method","Method:", c('AMOC','PELT','BinSeg','SeqNeigh'),width="150px",selected="BinSeg", selectize = FALSE),
                         numericInput("max","Max Q Allowed:", min=1, max=60, step=1, width="149px", value=60)
                         #sliderInput("max", label="Range:",min=0, max=60, value=5, step=1)

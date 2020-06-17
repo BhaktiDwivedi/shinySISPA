@@ -37,6 +37,7 @@ shinyServer(function(input, output, session) {
         getData = reactive({
           
           if(input$analysisType == '1d'){
+<<<<<<< HEAD
                 
                 if (input$f == 'ED'){
                   dataFile <- "data/KMS11_expvar_geneset_MM_compass_exp.txt"
@@ -54,6 +55,17 @@ shinyServer(function(input, output, session) {
                 }
                 
                 genelist = as.character(mgsub(c(";",":","-","_","|","?","@"," "), c(".",".",".",".",".",".",".","."), dat[,1], fixed=TRUE))
+=======
+            
+              if (is.null(input$file)) {
+                # if no data file is uploaded, return NULL
+                data <- NULL
+              } else {
+                # otherwise read the data and return the data.frame
+                dataFile <- input$file$datapath
+                dat <- read.csv(dataFile, header=T, sep="\t")
+                genelist = as.character(mgsub(c(";",":","-","_","|","?","@"), c(".",".",".",".",".",".","."), dat[,1], fixed=TRUE))
+>>>>>>> 6b77c12893d36f96de2d60d81d6fc308fc49562f
                 sampleid = colnames(dat[,-c(1)])
                 originalX = as.matrix(dat[,-c(1)])
                 rownames(originalX) <- genelist
@@ -74,6 +86,10 @@ shinyServer(function(input, output, session) {
                 colnames(transposeX) <- NULL
                 colnames(transposeX) <- n
                 data = list(ori=originalX, trans=transposeX, genelist=genelist, filtgenelist=filtgenelist, geneid=length(genelist), sampleid=length(sampleid))
+<<<<<<< HEAD
+=======
+              }
+>>>>>>> 6b77c12893d36f96de2d60d81d6fc308fc49562f
           }
           else {
             
@@ -165,6 +181,7 @@ shinyServer(function(input, output, session) {
           
       if(input$analysisType == '3d'){  
             
+<<<<<<< HEAD
         if (input$f3 == 'ED'){
           dataFile <- "data/KMS11_expvar_geneset_MM_compass_var.txt"
           dat <- read.csv(dataFile, header=T, sep="\t")
@@ -180,6 +197,15 @@ shinyServer(function(input, output, session) {
           return(NULL)
         }
         
+=======
+          if (is.null(input$file3)) {
+            # if no data file is uploaded, return NULL
+            data <- NULL
+          } else {
+            # otherwise read the data and return the data.frame
+            dataFile <- input$file3$datapath
+            dat <- read.csv(dataFile, header=T, sep="\t")
+>>>>>>> 6b77c12893d36f96de2d60d81d6fc308fc49562f
             genelist = as.character(mgsub(c(";",":","-","_","|","?","@"), c(".",".",".",".",".",".","."), dat[,1], fixed=TRUE))
             sampleid = colnames(dat[,-c(1)])
             originalX = as.matrix(dat[,-c(1)])
@@ -202,6 +228,10 @@ shinyServer(function(input, output, session) {
             colnames(transposeX) <- NULL
             colnames(transposeX) <- n
             data = list(ori=originalX, trans=transposeX, genelist=genelist, filtgenelist=filtgenelist, geneid=length(genelist), sampleid=length(sampleid))
+<<<<<<< HEAD
+=======
+          }
+>>>>>>> 6b77c12893d36f96de2d60d81d6fc308fc49562f
       }
     })
         
