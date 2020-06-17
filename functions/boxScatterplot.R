@@ -1,0 +1,20 @@
+boxScatterplot = function(x,TITLE, Y_LABEL){
+
+  bp <- ggplot(x, aes(fill=ind, x=ind, y=value))
+  bp <- bp + geom_boxplot(notch = FALSE)
+  bp <- bp + geom_jitter(position = position_jitter(width = .05, height =0), shape=21, size=1.5)
+  bp <- bp + scale_fill_manual(breaks = c("Orange","Grey"), values = c("orange", "grey"))
+  bp <- bp + theme(axis.title.y = element_text(colour="black", face="plain", size=14.0))
+  bp <- bp + theme(panel.background = element_rect(fill="NA"))
+  bp <- bp + theme(panel.border = element_rect(colour = "black", fill="NA"))
+  bp <- bp + theme(panel.grid.major.y = element_line(colour="NA"))
+  bp <- bp + theme(panel.grid.minor = element_line(colour = "NA"))
+  bp <- bp + theme(axis.text.x = element_text(hjust = 0.5, vjust = 0.5, colour="black", face="plain", size=14.0))
+  bp <- bp + theme(axis.text.y = element_text(hjust = 1.0, vjust = 0.5, colour="black", size=14.0))
+  bp <- bp + ylab(Y_LABEL)
+  bp <- bp + xlab("")
+  bp <- bp + ggtitle(TITLE)
+  bp <- bp + theme(plot.title = element_text(colour="black", face="bold", size=16))
+  bp <- bp + theme(legend.position = "none")
+  return(bp)
+}
