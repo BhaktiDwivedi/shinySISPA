@@ -54,10 +54,11 @@ Running shinySISPA on a local computer
 	if (!requireNamespace("BiocManager", quietly = TRUE))
     		install.packages("BiocManager")
 		BiocManager::install("package_name")
-4)	Users can run shinySISPA locally using the source code available from the GitHub: https://github.com/BhaktiDwivedi/shinySISPA, by typing the below commands in R console:
+4)	Install Cairo R package on your system for visuals to be displayed
+5)	Users can run shinySISPA locally using the source code available from the GitHub: https://github.com/BhaktiDwivedi/shinySISPA, by typing the below commands in R console:
     > library(shiny)
     > runApp("shinySISPA")
-5)	Users can also download and run the app from GitHub directly using:
+6)	Users can also download and run the app from GitHub directly using:
     > shiny::runGitHub('shinySISPA', 'BhaktiDwivedi')
   
 Please see shinySISPA_manual.pdf for more details.  
