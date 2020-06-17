@@ -205,7 +205,7 @@ shinyServer(function(input, output, session) {
       }
     })
         
-        output$inputData <- renderDataTable({
+        output$inputData <- DT::renderDataTable({
             if (is.null(getData()$trans)) return(NULL)
             else{
               if(ncol(getData()$trans) < 5){
@@ -247,7 +247,7 @@ shinyServer(function(input, output, session) {
             }
         })
         
-        output$inputData1 <- renderDataTable({
+        output$inputData1 <- DT::renderDataTable({
           if (is.null(getData()$trans)) return(NULL)
           else{
             if(ncol(getData()$trans) < 5){
@@ -288,7 +288,7 @@ shinyServer(function(input, output, session) {
           }
         })
         
-        output$inputData2 <- renderDataTable({
+        output$inputData2 <- DT::renderDataTable({
           if (is.null(getData2()$trans)) return(NULL)
           else{
             if(ncol(getData2()$trans) < 5){
@@ -329,7 +329,7 @@ shinyServer(function(input, output, session) {
           }
         })
 
-        output$inputData3d_1 <- renderDataTable({
+        output$inputData3d_1 <- DT::renderDataTable({
           if (is.null(getData()$trans)) return(NULL)
           else{
             if(ncol(getData()$trans) < 5){
@@ -370,7 +370,7 @@ shinyServer(function(input, output, session) {
           }
         })
         
-        output$inputData3d_2 <- renderDataTable({
+        output$inputData3d_2 <- DT::renderDataTable({
           if (is.null(getData2()$trans)) return(NULL)
           else{
             if(ncol(getData2()$trans) < 5){
@@ -411,7 +411,7 @@ shinyServer(function(input, output, session) {
           }
         })
         
-        output$inputData3d_3 <- renderDataTable({
+        output$inputData3d_3 <- DT::renderDataTable({
           if (is.null(getData3()$trans)) return(NULL)
           else{
             if(ncol(getData3()$trans) < 5){
@@ -565,7 +565,7 @@ shinyServer(function(input, output, session) {
           
         })
         
-        output$sispa_results <- renderDataTable({
+        output$sispa_results <- DT::renderDataTable({
           if(!is.null(getSISPA_results()$cpt_out)){
                getSISPA_results()$cpt_out
               }
@@ -593,7 +593,7 @@ shinyServer(function(input, output, session) {
         },
         height = 700, width = 900)
         
-        output$sispa_results2 <- renderDataTable({
+        output$sispa_results2 <- DT::renderDataTable({
           if (!is.null(getSISPA_results()$cpt_out)){
               getSISPA_results()$cpt_out
             }
@@ -622,7 +622,7 @@ shinyServer(function(input, output, session) {
         height = 700, width = 900)
         
         
-        output$sispa_results3 <- renderDataTable({
+        output$sispa_results3 <- DT::renderDataTable({
           if (!is.null(getSISPA_results()$cpt_out)){
             getSISPA_results()$cpt_out
           }

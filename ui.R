@@ -94,7 +94,7 @@ shinyUI(fluidPage(theme = "bootstrap.css",
                       tabPanel("SISPA Results",value=2,
                                fluidRow(
                                  column(8,
-                                       dataTableOutput("sispa_results")
+                                       DT::dataTableOutput("sispa_results")
                                  ),
                                  column(4,
                                         plotOutput("cptplot"),
@@ -185,7 +185,7 @@ shinyUI(fluidPage(theme = "bootstrap.css",
                       tabPanel("SISPA Results",value=2,
                                fluidRow(
                                  column(8,
-                                    dataTableOutput("sispa_results2")
+                                    DT::dataTableOutput("sispa_results2")
                                  ),
                                  column(4,
                                     plotOutput("cptplot2"),
@@ -285,7 +285,7 @@ shinyUI(fluidPage(theme = "bootstrap.css",
                     tabPanel("SISPA Results",value=2,
                            fluidRow(
                              column(8,
-                                    dataTableOutput("sispa_results3")
+                                    DT::dataTableOutput("sispa_results3")
                              ),
                              column(4,
                                     plotOutput("cptplot3"),

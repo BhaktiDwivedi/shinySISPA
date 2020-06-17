@@ -49,11 +49,15 @@ Running shinySISPA on a local computer
 
 1)	Download and install R or RStudio (version 3.3.2. or later) from https://cran.r-project.organd 
 2)	Open R and install the below required packages: 
-	> install.packages(c("shiny", "GSVA", “genefilter”, "changepoint", "data.table", “ggplot2”, "plyr"))
-3)	Users can run shinySISPA locally using the source code available from the GitHub: https://github.com/BhaktiDwivedi/shinySISPA, by typing the below commands in R console:
+	> install.packages(c("shiny", "GSVA", "genefilter", "changepoint", "data.table", “ggplot2”, "plyr")). 
+3)	If any of these packages are not available for your R version, please download them via Bioconductor
+	if (!requireNamespace("BiocManager", quietly = TRUE))
+    		install.packages("BiocManager")
+		BiocManager::install("package_name")
+4)	Users can run shinySISPA locally using the source code available from the GitHub: https://github.com/BhaktiDwivedi/shinySISPA, by typing the below commands in R console:
     > library(shiny)
     > runApp("shinySISPA")
-4)	Users can also download and run the app from GitHub directly using:
+5)	Users can also download and run the app from GitHub directly using:
     > shiny::runGitHub('shinySISPA', 'BhaktiDwivedi')
   
 Please see shinySISPA_manual.pdf for more details.  
